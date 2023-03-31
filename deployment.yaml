@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: second-app-deployment
 spec: 
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: second-app
@@ -14,9 +14,8 @@ spec:
     spec:
       containers:
       - name: second-node
-        image: rgskartner/kube-first-app:4
+        image: rgskartner/kube-first-app:6
         resources:
           limits:
             memory: "128Mi"
             cpu: "500m"
-      
