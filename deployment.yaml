@@ -15,6 +15,12 @@ spec:
       containers:
       - name: second-node
         image: rgskartner/kube-first-app:6
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+          periodSeconds: 10
+          initialDelaySeconds: 5
         resources:
           limits:
             memory: "128Mi"
